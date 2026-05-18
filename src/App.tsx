@@ -1,10 +1,18 @@
-import "./App.css";
 import Header from "./components/Header";
+import JobCard from "./components/JobCard";
+// @ts-ignore: Allow importing CSS without type declarations
+import "./App.css";
 
 export default function App() {
   return (
-    <div>
+    <>
       <Header />
-    </div>
+
+      <main>
+        <JobCard />
+        <JobCard />
+        <JobCard />
+      </main>
+    </>
   );
 }

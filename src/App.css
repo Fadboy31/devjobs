@@ -17,3 +17,16 @@ header h1 {
 header p {
   color: white;
 }
+
+main {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.job-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 250px;
+}
