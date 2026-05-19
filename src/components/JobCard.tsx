@@ -1,5 +1,5 @@
-import styles from "./JobCard.module.css";
 import Badge from "./Badge";
+import styles from "./JobCard.module.css";
 
 interface Job {
   id: number;

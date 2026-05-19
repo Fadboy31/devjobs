@@ -7,7 +7,10 @@ interface BadgeProps {
   variant?: BadgeVariant;
 }
 
-export default function Badge({ label, variant = "remote" }: BadgeProps) {
+export default function Badge({
+  label,
+  variant = "remote",
+}: BadgeProps) {
   return (
     <span className={`${styles.badge} ${styles[variant]}`}>
       {label}
