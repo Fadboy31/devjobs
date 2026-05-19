@@ -1,7 +1,5 @@
 import "./App.css";
-import Header from "./components/Header";
-import JobCard from "./components/JobCard";
-
+import { Header, JobCard } from "./components";
 export default function App() {
   const jobs = [
     {
