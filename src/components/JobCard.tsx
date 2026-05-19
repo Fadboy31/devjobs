@@ -1,4 +1,5 @@
 import styles from "./JobCard.module.css";
+import Badge from "./Badge";
 
 interface Job {
   id: number;
@@ -16,17 +17,20 @@ interface JobCardProps {
 export default function JobCard({ job }: JobCardProps) {
   return (
     <div className={styles.card}>
-     <h2 className={styles.title}>{job.title}</h2>
+      
+      {/* Badge goes here */}
+      {job.isRemote && (
+        <Badge label="Remote" variant="remote" />
+      )}
 
-{job.isRemote && (
-  <span className={styles.remoteBadge}>Remote</span>
-)}
+      <h2 className={styles.title}>{job.title}</h2>
 
       <p className={styles.company}>{job.company}</p>
 
       <p className={styles.location}>{job.location}</p>
 
       <p className={styles.salary}>{job.salary}</p>
+
     </div>
   );
 }
