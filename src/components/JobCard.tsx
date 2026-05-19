@@ -16,7 +16,11 @@ interface JobCardProps {
 export default function JobCard({ job }: JobCardProps) {
   return (
     <div className={styles.card}>
-      <h2 className={styles.title}>{job.title}</h2>
+     <h2 className={styles.title}>{job.title}</h2>
+
+{job.isRemote && (
+  <span className={styles.remoteBadge}>Remote</span>
+)}
 
       <p className={styles.company}>{job.company}</p>
 

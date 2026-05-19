@@ -32,3 +32,14 @@
   font-weight: bold;
   color: crimson;
 }
+
+.remoteBadge {
+  display: inline-block;
+  background-color: #22c55e;
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
