@@ -1,13 +1,28 @@
-export default function JobCard() {
+import styles from "./JobCard.module.css";
+
+interface Job {
+  id: number;
+  title: string;
+  company: string;
+  location: string;
+  salary: string;
+  isRemote: boolean;
+}
+
+interface JobCardProps {
+  job: Job;
+}
+
+export default function JobCard({ job }: JobCardProps) {
   return (
-    <div className="job-card">
-      <h2 className="job-card__title">Senior Frontend Dev</h2>
+    <div className={styles.card}>
+      <h2 className={styles.title}>{job.title}</h2>
 
-      <p className="job-card__company">TechCorp Africa</p>
+      <p className={styles.company}>{job.company}</p>
 
-      <p className="job-card__meta">Nairobi, Kenya</p>
+      <p className={styles.location}>{job.location}</p>
 
-      <p className="job-card__meta">KES 150k–200k</p>
+      <p className={styles.salary}>{job.salary}</p>
     </div>
   );
 }
