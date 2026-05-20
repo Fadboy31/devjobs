@@ -1,13 +1,14 @@
 import Badge from "./Badge";
 import styles from "./JobCard.module.css";
 
-interface Job {
+export interface Job {
   id: number;
   title: string;
   company: string;
   location: string;
   salary: string;
   isRemote: boolean;
+  type: "Remote" | "Full Time" | "Contract";
 }
 
 interface JobCardProps {
@@ -17,11 +18,16 @@ interface JobCardProps {
 export default function JobCard({ job }: JobCardProps) {
   return (
     <div className={styles.card}>
-      
-      {/* Badge goes here */}
-      {job.isRemote && (
-        <Badge label="Remote" variant="remote" />
-      )}
+      <Badge
+        label={job.type}
+        variant={
+          job.type === "Remote"
+            ? "remote"
+            : job.type === "Full Time"
+            ? "fulltime"
+            : "contract"
+        }
+      />
 
       <h2 className={styles.title}>{job.title}</h2>
 
@@ -30,7 +36,6 @@ export default function JobCard({ job }: JobCardProps) {
       <p className={styles.location}>{job.location}</p>
 
       <p className={styles.salary}>{job.salary}</p>
-
     </div>
   );
 }

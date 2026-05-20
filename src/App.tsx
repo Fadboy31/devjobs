@@ -9,6 +9,7 @@ const JOBS = [
     location: "Nairobi, Kenya",
     salary: "KES 150k–200k",
     isRemote: true,
+    type: "Remote" as const,
   },
 
   {
@@ -18,6 +19,7 @@ const JOBS = [
     location: "Dar es Salaam, Tanzania",
     salary: "TZS 2M–3M",
     isRemote: false,
+    type: "Full Time" as const,
   },
 
   {
@@ -26,7 +28,8 @@ const JOBS = [
     company: "CloudBase KE",
     location: "Mombasa, Kenya",
     salary: "KES 180k–250k",
-    isRemote: true,
+    isRemote: false,
+    type: "Contract" as const,
   },
 ];
 
