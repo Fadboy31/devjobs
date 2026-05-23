@@ -10,6 +10,7 @@ const JOBS = [
     salary: "KES 150k–200k",
     isRemote: true,
     type: "Remote" as const,
+    postedAt: "2 days ago",
   },
 
   {
@@ -20,6 +21,7 @@ const JOBS = [
     salary: "TZS 2M–3M",
     isRemote: false,
     type: "Full Time" as const,
+    postedAt: "1 week ago",
   },
 
   {
@@ -30,6 +32,7 @@ const JOBS = [
     salary: "KES 180k–250k",
     isRemote: false,
     type: "Contract" as const,
+    postedAt: "4 days ago",
   },
 ];
 

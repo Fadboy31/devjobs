@@ -1,41 +1,45 @@
 import Badge from "./Badge";
 import styles from "./JobCard.module.css";
 
-export interface Job {
+export interface JobProps {
   id: number;
   title: string;
   company: string;
   location: string;
-  salary: string;
+  salary?: string;
   isRemote: boolean;
-  type: "Remote" | "Full Time" | "Contract";
+  postedAt: string;
 }
 
-interface JobCardProps {
-  job: Job;
-}
-
-export default function JobCard({ job }: JobCardProps) {
+function JobCard({
+  title,
+  company,
+  location,
+  salary,
+  isRemote,
+  postedAt,
+}: JobProps) {
   return (
     <div className={styles.card}>
-      <Badge
-        label={job.type}
-        variant={
-          job.type === "Remote"
-            ? "remote"
-            : job.type === "Full Time"
-            ? "fulltime"
-            : "contract"
-        }
-      />
+      {isRemote && (
+        <Badge label="Remote" variant="remote" />
+      )}
 
-      <h2 className={styles.title}>{job.title}</h2>
+      <h2 className={styles.title}>{title}</h2>
 
-      <p className={styles.company}>{job.company}</p>
+      <p className={styles.company}>{company}</p>
 
-      <p className={styles.location}>{job.location}</p>
+      <p className={styles.location}>{location}</p>
 
-      <p className={styles.salary}>{job.salary}</p>
+      {salary && (
+        <p className={styles.salary}>{salary}</p>
+      )}
+
+      <p className={styles.postedAt}>
+        Posted {postedAt}
+      </p>
     </div>
   );
 }
+
+export default JobCard;
