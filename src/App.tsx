@@ -1,38 +1,54 @@
 import "./App.css";
-import { Header, JobList } from "./components";
+import { Header, JobCard } from "./components";
+import type { JobProps } from "./components/JobCard";
 
-const JOBS = [
+const JOBS: JobProps[] = [
   {
     id: 1,
-    title: "Senior Frontend Dev",
-    company: "TechCorp Africa",
-    location: "Nairobi, Kenya",
-    salary: "KES 150k–200k",
+    title: "Frontend Engineer",
+    company: "Stripe",
+    location: "Remote — US",
     isRemote: true,
-    type: "Remote" as const,
-    postedAt: "2 days ago",
+    postedAt: "2h ago",
   },
 
   {
     id: 2,
-    title: "Backend Engineer",
-    company: "DataHub TZ",
-    location: "Dar es Salaam, Tanzania",
-    salary: "TZS 2M–3M",
-    isRemote: false,
-    type: "Full Time" as const,
-    postedAt: "1 week ago",
+    title: "React Developer",
+    company: "Vercel",
+    location: "Remote — Global",
+    salary: "$110k–$140k",
+    isRemote: true,
+    postedAt: "5h ago",
   },
 
   {
     id: 3,
-    title: "DevOps Specialist",
-    company: "CloudBase KE",
-    location: "Mombasa, Kenya",
-    salary: "KES 180k–250k",
+    title: "UI Engineer",
+    company: "Airbnb",
+    location: "San Francisco, CA",
+    salary: "$130k–$160k",
     isRemote: false,
-    type: "Contract" as const,
-    postedAt: "4 days ago",
+    postedAt: "1d ago",
+  },
+
+  {
+    id: 4,
+    title: "TypeScript Developer",
+    company: "Microsoft",
+    location: "Remote — US",
+    isRemote: true,
+    postedAt: "3d ago",
+  },
+
+  {
+    id: 5,
+    title: "Web Developer",
+    company: "Shopify",
+    location: "Ottawa, Canada",
+    salary: "$90k–$120k",
+    isRemote: false,
+    postedAt: "1w ago",
   },
 ];
 
@@ -40,7 +56,12 @@ export default function App() {
   return (
     <>
       <Header />
-      <JobList jobs={JOBS} />
+
+      <main className="job-list">
+        {JOBS.map((job) => (
+          <JobCard key={job.id} {...job} />
+        ))}
+      </main>
     </>
   );
 }
