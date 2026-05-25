@@ -9,7 +9,6 @@ const JOBS: JobProps[] = [
     company: "Stripe",
     location: "Remote — US",
     isRemote: true,
-    postedAt: "2h ago",
   },
 
   {
@@ -17,9 +16,7 @@ const JOBS: JobProps[] = [
     title: "React Developer",
     company: "Vercel",
     location: "Remote — Global",
-    isRemote: true,
-    postedAt: "5h ago",
-  },
+    isRemote: true, },
 
   {
     id: 3,
@@ -27,8 +24,7 @@ const JOBS: JobProps[] = [
     company: "Airbnb",
     location: "San Francisco, CA",
     isRemote: false,
-    postedAt: "1d ago",
-  },
+    },
 
   {
     id: 4,
@@ -36,8 +32,7 @@ const JOBS: JobProps[] = [
     company: "Microsoft",
     location: "Remote — US",
     isRemote: true,
-    postedAt: "3d ago",
-  },
+     },
 
   {
     id: 5,
@@ -45,8 +40,7 @@ const JOBS: JobProps[] = [
     company: "Shopify",
     location: "Ottawa, Canada",
     isRemote: false,
-    postedAt: "1w ago",
-  },
+    },
 ];
 
 export default function App() {
