@@ -17,8 +17,14 @@ function JobCard({
       )}
 
       <h2 className={styles.title}>{title}</h2>
-
-      <p className={styles.company}>{company}</p>
+{company.logo && (
+  <img
+    src={company.logo}
+    alt={company.name}
+    className={styles.logo}
+  />
+)}
+      <p className={styles.company}>{company.name}</p>
 
       <p className={styles.location}>{location}</p>
 

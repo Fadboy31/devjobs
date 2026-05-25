@@ -43,3 +43,9 @@
   margin-bottom: 0.8rem;
   font-weight: bold;
 }
+.logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
