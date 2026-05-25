@@ -11,13 +11,13 @@ export interface JobProps {
 postedAt?: string;
 }
 
-function JobCard({
+export default function JobCard({
   title,
   company,
   location,
   salary,
   isRemote,
-  postedAt,
+  postedAt = "Recently",
 }: JobProps) {
   return (
    <div className={styles.card}>
@@ -42,4 +42,4 @@ function JobCard({
   );
 }
 
-export default JobCard;
+
