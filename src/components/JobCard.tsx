@@ -29,11 +29,9 @@ function JobCard({
 
       <p className={styles.company}>{company}</p>
 
-      <p className={styles.location}>{location}</p>
-
-      {salary && (
-        <p className={styles.salary}>{salary}</p>
-      )}
+      <p className={styles.salary}>
+  {salary ?? "Salary not listed"}
+</p>
 
       <p className={styles.postedAt}>
         Posted {postedAt}
