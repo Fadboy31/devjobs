@@ -2,7 +2,7 @@ import Badge from "./Badge";
 import styles from "./JobCard.module.css";
 import type { Job } from "../types";
 
-function JobCard({
+export default function JobCard({
   title,
   company,
   location,
@@ -16,17 +16,25 @@ function JobCard({
         <Badge label="Remote" variant="remote" />
       )}
 
-      <h2 className={styles.title}>{title}</h2>
-{company.logo && (
-  <img
-    src={company.logo}
-    alt={company.name}
-    className={styles.logo}
-  />
-)}
-      <p className={styles.company}>{company.name}</p>
+      {company.logo && (
+        <img
+          src={company.logo}
+          alt={company.name}
+          className={styles.logo}
+        />
+      )}
 
-      <p className={styles.location}>{location}</p>
+      <h2 className={styles.title}>
+        {title}
+      </h2>
+
+      <p className={styles.company}>
+        {company.name}
+      </p>
+
+      <p className={styles.location}>
+        {location}
+      </p>
 
       <p className={styles.salary}>
         {salary ?? "Salary not listed"}
@@ -38,5 +46,3 @@ function JobCard({
     </div>
   );
 }
-
-export default JobCard;
