@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Badge from "./Badge";
 import styles from "./JobCard.module.css";
 import type { Job } from "../types";
@@ -10,8 +11,7 @@ export default function JobCard({
   isRemote,
   postedAt = "Recently",
 }: Job) {
-
-  let viewCount = 0;
+  const [isSaved, setIsSaved] = useState<boolean>(false);
 
   return (
     <div className={styles.card}>
@@ -47,20 +47,11 @@ export default function JobCard({
         Posted {postedAt}
       </p>
 
-      <p>Views: {viewCount}</p>
-
       <button
-        onClick={() => {
-          viewCount++;
-          console.log(viewCount);
-        }}
+        onClick={() => setIsSaved(!isSaved)}
       >
-        Track View
+        {isSaved ? "❤️ Saved" : "🤍 Save"}
       </button>
-
-      {/* React does not re-render when a normal variable changes.
-          viewCount increases in JavaScript, but React is never notified
-          that the UI should update, so the screen keeps showing 0. */}
     </div>
   );
 }
