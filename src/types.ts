@@ -13,3 +13,7 @@ export interface Job {
   isRemote: boolean;
   postedAt?: string;
 }
+
+export interface JobCardProps extends Job {
+  onSave?: (id: number) => void;
+}

@@ -1,17 +1,24 @@
 import { useState } from "react";
 import Badge from "./Badge";
 import styles from "./JobCard.module.css";
-import type { Job } from "../types";
+import type { JobCardProps } from "../types";
 
 export default function JobCard({
+  id,
   title,
   company,
   location,
   salary,
   isRemote,
   postedAt = "Recently",
-}: Job) {
+  onSave,
+}: JobCardProps) {
   const [isSaved, setIsSaved] = useState<boolean>(false);
+
+  function handleSave() {
+    setIsSaved(!isSaved);
+    onSave?.(id);
+  }
 
   return (
     <div className={styles.card}>
@@ -47,9 +54,7 @@ export default function JobCard({
         Posted {postedAt}
       </p>
 
-      <button
-        onClick={() => setIsSaved(!isSaved)}
-      >
+      <button onClick={handleSave}>
         {isSaved ? "❤️ Saved" : "🤍 Save"}
       </button>
     </div>
