@@ -45,7 +45,7 @@ main {
   color: #777;
 }
 
-input {
+.input {
   width: 100%;
   max-width: 600px;
   padding: 12px;
