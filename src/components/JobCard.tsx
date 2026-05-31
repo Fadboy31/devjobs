@@ -10,6 +10,9 @@ export default function JobCard({
   isRemote,
   postedAt = "Recently",
 }: Job) {
+
+  let viewCount = 0;
+
   return (
     <div className={styles.card}>
       {isRemote && (
@@ -43,6 +46,21 @@ export default function JobCard({
       <p className={styles.postedAt}>
         Posted {postedAt}
       </p>
+
+      <p>Views: {viewCount}</p>
+
+      <button
+        onClick={() => {
+          viewCount++;
+          console.log(viewCount);
+        }}
+      >
+        Track View
+      </button>
+
+      {/* React does not re-render when a normal variable changes.
+          viewCount increases in JavaScript, but React is never notified
+          that the UI should update, so the screen keeps showing 0. */}
     </div>
   );
 }
